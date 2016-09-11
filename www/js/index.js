@@ -37,8 +37,13 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+var userpush='0';
         var parentElement = document.getElementById(id);
-var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz', '_blank', 'location=no');
+    window.plugins.OneSignal.getIds(function(ids) {
+userpush=ids.userId;
+    });
+        
+var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz?userpush='+userpush, '_blank', 'location=no');
         
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -50,10 +55,6 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz', '_blank', 'loca
         window.plugins.OneSignal.init( "338ecc0f-8620-437d-9ed3-9cd12d5976d9",
                                         {googleProjectNumber: "565071945004"},
                                         app.didReceiveRemoteNotificationCallBack);
-                                        
-         window.plugins.OneSignal.getIds(function(ids) {
-        alert(ids.userId);
-    });
     },    didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
     }
