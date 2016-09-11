@@ -49,6 +49,13 @@
     <plugin name="cordova-plugin-statusbar"           source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration"           source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist"           source="npm" spec="~1.2.1" />
+    
+    <gap:plugin name="onesignal-cordova-plugin" source="npm" />
+
+<!-- Recommend the newest cli but requires cli-5.1.1+ and gradle for Android. -->
+<!-- If the below settings are not compatible with your project set the "PGB ANT" version above. -->
+<preference name="phonegap-version" value="cli-5.4.1" />
+<preference name="android-build-tool" value="gradle" />
 
     <!-- Define app icon and splashscreen for each platform. -->
     <icon src="icon.png" />
