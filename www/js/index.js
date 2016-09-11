@@ -45,6 +45,7 @@ userpush=ids.userId;
 userpush1='99';
     });
 
+
    var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
     
 
