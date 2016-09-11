@@ -38,7 +38,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        document.location.href = 'http://topstar.vezuedu.kz';
+var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz', '_blank', 'location=yes');
         
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
