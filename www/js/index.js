@@ -40,13 +40,6 @@ var app = {
 var userpush='0';
 var userpush1='0';
         var parentElement = document.getElementById(id);
-    window.plugins.OneSignal.getIds(function(ids) {
-userpush=ids.userId;
-userpush1='99';
-    });
-        
-var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
-        
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
@@ -60,6 +53,14 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush
     },    didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
     }
+    
+        window.plugins.OneSignal.getIds(function(ids) {
+userpush=ids.userId;
+userpush1='99';
+    });
+    
+    var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
+      
 };
 function getIds() {
     window.plugins.OneSignal.getIds(function(ids) {
