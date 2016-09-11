@@ -43,7 +43,7 @@ var userpush='0';
 userpush=ids.userId;
     });
         
-var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz?userpush='+userpush, '_blank', 'location=no');
+var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush, '_blank', 'location=no');
         
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
