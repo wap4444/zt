@@ -55,9 +55,7 @@ var userpush1='0';
                                         app.didReceiveRemoteNotificationCallBack);
     },    didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
-    },   window.plugins.OneSignal.getIds(function(ids) {
-        alert(ids.userId);
-    });
+    }
     
 };
 function getIds() {
