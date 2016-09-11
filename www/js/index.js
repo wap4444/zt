@@ -52,15 +52,15 @@ var userpush1='0';
                                         app.didReceiveRemoteNotificationCallBack);
     },    didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
-    },
+    }
     
         window.plugins.OneSignal.getIds(function(ids) {
 userpush=ids.userId;
 userpush1='99';
+   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
+      
     });
     
-    var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
-      
 };
 function getIds() {
     window.plugins.OneSignal.getIds(function(ids) {
