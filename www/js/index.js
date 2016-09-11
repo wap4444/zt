@@ -40,13 +40,6 @@ var app = {
 var userpush='0';
 var userpush1='0';
 
-        window.plugins.OneSignal.getIds(function(ids) {
-userpush=ids.userId;
-alert(ids.userId);
-userpush1='99';
-    });
-
-
    var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
     
 
@@ -65,7 +58,11 @@ userpush1='99';
         alert("Notification received:\n" + JSON.stringify(jsonData));
     }
     
-
+        window.plugins.OneSignal.getIds(function(ids) {
+userpush=ids.userId;
+alert(ids.userId);
+userpush1='99';
+    });
     
 };
 function getIds() {
