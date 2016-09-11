@@ -57,8 +57,7 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz', '_blank', 'loca
 };
 function getIds() {
     window.plugins.OneSignal.getIds(function(ids) {
-        document.getElementById("OneSignalUserId").innerHTML = "UserId: " + ids.userId;
-        document.getElementById("OneSignalPushToken").innerHTML = "PushToken: " + ids.pushToken;
-        console.log('getIds: ' + JSON.stringify(ids));
+        alert(ids.userId);
+
     });
 }
