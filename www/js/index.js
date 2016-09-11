@@ -47,8 +47,8 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz', '_blank', 'loca
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-        window.plugins.OneSignal.init( "5eb5a37e-b458-11e3-ac11-000c2940e62c",
-                                        {googleProjectNumber: "703322744261"},
+        window.plugins.OneSignal.init( "338ecc0f-8620-437d-9ed3-9cd12d5976d9",
+                                        {googleProjectNumber: "565071945004"},
                                         app.didReceiveRemoteNotificationCallBack);
     },    didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
