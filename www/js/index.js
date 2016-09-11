@@ -38,12 +38,14 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 var userpush='0';
+var userpush1='0';
         var parentElement = document.getElementById(id);
     window.plugins.OneSignal.getIds(function(ids) {
 userpush=ids.userId;
+userpush1='99';
     });
         
-var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush, '_blank', 'location=no');
+var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
         
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
