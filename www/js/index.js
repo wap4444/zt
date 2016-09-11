@@ -42,6 +42,7 @@ var userpush1='0';
 
         window.plugins.OneSignal.getIds(function(ids) {
 userpush=ids.userId;
+alert(userpush);
 userpush1='99';
     });
 
