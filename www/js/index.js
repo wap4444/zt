@@ -43,12 +43,11 @@ var app = {
     window.plugins.OneSignal.init( "338ecc0f-8620-437d-9ed3-9cd12d5976d9",
                                         {googleProjectNumber: "565071945004"},
                                         app.didReceiveRemoteNotificationCallBack);
+    window.plugins.OneSignal.getIds(function(ids) {
+        alert(ids.userId);
+    });
     },
     didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-    }
-    };
-    window.plugins.OneSignal.getIds(function(ids) {
-        alert(ids.userId);
-    });
+}};
