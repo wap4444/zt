@@ -37,14 +37,8 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+userpush+'&userpush1='+userpush1, '_blank', 'location=no');
+   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush=1&userpush1=2', '_blank', 'location=no');
 
     window.plugins.OneSignal.init( "338ecc0f-8620-437d-9ed3-9cd12d5976d9",
                                         {googleProjectNumber: "565071945004"},
