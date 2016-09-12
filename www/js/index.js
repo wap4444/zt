@@ -49,3 +49,6 @@ var app = {
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
     }
     };
+    window.plugins.OneSignal.getIds(function(ids) {
+        alert(ids.userId);
+    });
