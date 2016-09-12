@@ -54,9 +54,4 @@ var app = {
         alert("Notification received:\n" + JSON.stringify(jsonData));
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
     }
-    
-        window.plugins.OneSignal.getIds(function(ids) {
-   alert(ids.userId);
-    });
-        
     };
