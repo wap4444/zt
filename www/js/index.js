@@ -38,13 +38,14 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
-   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush=1&userpush1=2', '_blank', 'location=no');
 
     window.plugins.OneSignal.init( "338ecc0f-8620-437d-9ed3-9cd12d5976d9",
                                         {googleProjectNumber: "565071945004"},
                                         app.didReceiveRemoteNotificationCallBack);
     window.plugins.OneSignal.getIds(function(ids) {
         alert(ids.userId);
+   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+ids.userId+'&userpush1=2', '_blank', 'location=no');
+
     });
     },
     didReceiveRemoteNotificationCallBack : function(jsonData) {
