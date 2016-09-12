@@ -43,7 +43,6 @@ var app = {
                                         {googleProjectNumber: "565071945004"},
                                         app.didReceiveRemoteNotificationCallBack);
     window.plugins.OneSignal.getIds(function(ids) {
-        alert(ids.userId);
    var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+ids.userId+'&userpush1=2', '_blank', 'location=no');
 
     });
