@@ -48,6 +48,5 @@ var app = {
     });
     },
     didReceiveRemoteNotificationCallBack : function(jsonData) {
-        alert("Notification received:\n" + JSON.stringify(jsonData));
-        console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+   var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
 }};
