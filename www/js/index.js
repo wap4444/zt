@@ -47,6 +47,9 @@ var app = {
     });
     },
     didReceiveRemoteNotificationCallBack : function(jsonData) {
-        $('body').append('<div style="position: relative;height:10%;width: 100%;background-color:red;">'+jsonData.additionalData.ssylka+'</div>');
+      
    var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
+   ref.addEventListener('loadstop', function() {
+    ref.executeScript({code: "$('body').append('<div style='position: relative;height:10%;width: 100%;background-color:red;'>'+jsonData.additionalData.ssylka+'</div>');"});
+});
 }};
