@@ -49,7 +49,5 @@ var app = {
     didReceiveRemoteNotificationCallBack : function(jsonData) {
       
    var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
-   ref.addEventListener('loadstop', function() {
-    ref.executeScript({code: "alert('ss'); $('body').append('<div style='z-index:99999999999999999;position: relative;height:10%;width: 100%;background-color:red;'>'+jsonData.additionalData.ssylka+'</div>');"});
-});
+
 }};
