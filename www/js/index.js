@@ -43,8 +43,7 @@ var app = {
                                         {googleProjectNumber: "565071945004"},
                                         app.didReceiveRemoteNotificationCallBack);
     window.plugins.OneSignal.getIds(function(ids) {
-   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/pril.php?userpush='+ids.userId+'&userpush1=2', '_blank', 'location=no');
-
+        window.location.replace("http://stackoverflow.com");
     });
     },
     didReceiveRemoteNotificationCallBack : function(jsonData) {
