@@ -39,7 +39,7 @@ var app = {
     receivedEvent: function(id) {
         
           var notificationOpenedCallback = function(jsonData) {
-   var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
+   var ref1 = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
   };
 
   window.plugins.OneSignal.init("338ecc0f-8620-437d-9ed3-9cd12d5976d9",
@@ -47,7 +47,9 @@ var app = {
                                  notificationOpenedCallback);
         
 window.plugins.OneSignal.getIds(function(ids) {
-   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/12/index.php?userpush='+ids.userId, '_blank', 'location=no');
+    if(ref1){}
+    else{
+   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/12/index.php?userpush='+ids.userId, '_blank', 'location=no');}
 });
   
   // Show an alert box if a notification comes in when the user is in your app.
