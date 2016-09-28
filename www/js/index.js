@@ -46,10 +46,10 @@ window.plugins.OneSignal.init( "338ecc0f-8620-437d-9ed3-9cd12d5976d9",
     window.plugins.OneSignal.getIds(function(ids) {
    var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/12/index.php?userpush='+ids.userId, '_blank', 'location=no');
     });
-    },
-    //Получение ПУША
+            //Получение ПУША
 didReceiveRemoteNotificationCallBack : function(jsonData) {  
    var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
 }
+    }
 
 };
