@@ -39,7 +39,7 @@ var app = {
     receivedEvent: function(id) {
         
           var notificationOpenedCallback = function(jsonData) {
- alert('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+   var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
   };
 
   window.plugins.OneSignal.init("338ecc0f-8620-437d-9ed3-9cd12d5976d9",
