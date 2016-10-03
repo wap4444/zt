@@ -39,7 +39,7 @@ var app = {
     receivedEvent: function(id) {
  var pp=0;
 
-   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/12/index.php?userpush=11', '_blank', 'location=no');
+   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/12/index.php?userpush=11', '_blank', 'location=no,toolbar=no');
     }
 
 };
