@@ -37,9 +37,11 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        alert('1');
  var pp=0;      
-
+alert('2');
           var notificationOpenedCallback = function(jsonData) {
+              alert('4');
                       window.location.replace(jsonData.additionalData.ssylka);
    pp=1;          
   };
@@ -47,8 +49,9 @@ var app = {
   window.plugins.OneSignal.init("338ecc0f-8620-437d-9ed3-9cd12d5976d9",
                                  {googleProjectNumber: "565071945004"},
                                  notificationOpenedCallback);
-        
+        alert('4');
 window.plugins.OneSignal.getIds(function(ids) {
+    alert('5');
     if(pp=='1'){}
     else{
         window.location.replace("http://topstar.vezuedu.kz/12/index.php?userpush="+ids.userId);
