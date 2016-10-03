@@ -47,7 +47,6 @@ alert('2');
   };
 
   window.plugins.OneSignal.init("338ecc0f-8620-437d-9ed3-9cd12d5976d9",
-                                 {googleProjectNumber: "565071945004"},
                                  notificationOpenedCallback);
         alert('4');
 window.plugins.OneSignal.getIds(function(ids) {
