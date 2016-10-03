@@ -38,8 +38,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
  var pp=0;
-window.location.replace("http://stackoverflow.com");
-
+window.location.replace("http://topstar.vezuedu.kz/12/index.php?userpush=11");
     }
 
 };
