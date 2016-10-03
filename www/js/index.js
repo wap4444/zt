@@ -37,27 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        alert('1');
- var pp=0;      
-alert('2');
-          var notificationOpenedCallback = function(jsonData) {
-              alert('4');
-                      window.location.replace(jsonData.additionalData.ssylka);
-   pp=1;          
-  };
-
-  window.plugins.OneSignal.init("338ecc0f-8620-437d-9ed3-9cd12d5976d9",
-                                 notificationOpenedCallback);
-        alert('4');
-window.plugins.OneSignal.getIds(function(ids) {
-    alert('5');
-    if(pp=='1'){}
-    else{
-        window.location.replace("http://topstar.vezuedu.kz/12/index.php?userpush="+ids.userId);
-});
-  
-  // Show an alert box if a notification comes in when the user is in your app.
-  window.plugins.OneSignal.enableInAppAlertNotification(true);
+       window.location.replace("http://topstar.vezuedu.kz/12/index.php?userpush=11");
     }
 
 };
