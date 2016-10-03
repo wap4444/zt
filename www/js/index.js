@@ -40,6 +40,7 @@ var app = {
  var pp=0;
 
 alert('sss');
+   var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/12/index.php?userpush=11', '_blank', 'location=no');
     }
 
 };
