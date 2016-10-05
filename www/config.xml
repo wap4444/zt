@@ -85,6 +85,7 @@ MaksimMorozov
         <icon   src="www/res/icon/ios/Icon-76@2x.png"                   platform="ios" width="152"  height="152" />
         <icon   src="www/res/icon/ios/Icon-Small.png"                   platform="ios" width="29"   height="29" />
         <icon   src="www/res/icon/ios/Icon-Small@2x.png"                platform="ios" width="58"   height="58" />
+        <icon   src="www/res/icon/ios/icon-small@3x.png"                platform="ios" width="87"   height="87" />
         <splash src="www/res/screen/ios/Default-568h@2x~iphone.png"     platform="ios" width="640"  height="1136" />
         <splash src="www/res/screen/ios/Default-667h.png"               platform="ios" width="750"  height="1334" />
         <splash src="www/res/screen/ios/Default-736h.png"               platform="ios" width="1242" height="2208" />
