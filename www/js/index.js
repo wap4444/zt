@@ -47,6 +47,10 @@ var app = {
 
         console.log('Received Event: ' + id);
         
+     
+     function GoGo() {
+alert('sss');
+}
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 
