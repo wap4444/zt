@@ -46,6 +46,8 @@ MaksimMorozov
 <!-- If the below settings are not compatible with your project set the "PGB ANT" version above. -->
         <preference name="phonegap-version" value="cli-5.4.1" />
 <preference name="android-build-tool" value="gradle" />
+         <preference name="StatusBarOverlaysWebView" value="true" />
+ -        <preference name="StatusBarBackgroundColor" value="#000000" />
 
     <!-- Define app icon and splashscreen for each platform. -->
     <icon src="icon.png" />
