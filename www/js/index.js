@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -38,6 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-     window.location.href("http://topstar.vezuedu.kz/fr7/index.php");
+window.location.replace("http://stackoverflow.com");
     }
+
 };
