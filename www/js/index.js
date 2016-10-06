@@ -37,7 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        window.location.replace("http://topstar.vezuedu.kz/fr7/index.php");
+        window.location.href("http://topstar.vezuedu.kz/fr7/index.php");
     }
 
 };
