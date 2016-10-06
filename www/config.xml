@@ -20,7 +20,7 @@ MaksimMorozov
     <content src="index.html" />
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="DisallowOverscroll"         value="true" />
+    <preference name="DisallowOverscroll"         value="false" />
     <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-minSdkVersion"      value="14" />
       <preference name="orientation" value="portrait" />
@@ -41,9 +41,7 @@ MaksimMorozov
     
     <gap:plugin name="onesignal-cordova-plugin" source="npm" />
         
-                 <preference name="StatusBarOverlaysWebView" value="true" />
-   <preference name="StatusBarBackgroundColor" value="#000000" />
-        <preference name="StatusBarStyle" value="blacktranslucent" />
+
 
 <!-- Recommend the newest cli but requires cli-5.1.1+ and gradle for Android. -->
 <!-- If the below settings are not compatible with your project set the "PGB ANT" version above. -->
