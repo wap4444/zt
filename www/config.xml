@@ -4,9 +4,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "kz.topstar"
-        version   = "1.0.4">
+        version   = "1.0.5">
 
-    <name>1Top Star Fitness</name>
+    <name>Top Star Fitness</name>
 
     <description>
 Мобильное приложение для клиентов клуба Top-Star
