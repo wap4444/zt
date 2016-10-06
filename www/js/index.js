@@ -37,6 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php', '_blank', 'location=no,toolbar=no');}
+        window.location.replace("http://topstar.vezuedu.kz/fr7/index.php");
+//     var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php', '_blank', 'location=no,toolbar=no');}
 
 };
