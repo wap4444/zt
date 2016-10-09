@@ -44,16 +44,22 @@ var rr=0;
         var iosSettings = {};
         iosSettings["kOSSettingsKeyAutoPrompt"] = true;
         iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
+        
+function didReceiveRemoteNotificationCallBack(jsonData) {
+    rr=1;    
+var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}
+
+function didOpenRemoteNotificationCallBack(jsonData) {
+    rr=1;    
+var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
+var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+ }
 
         window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "565071945004")
                        .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
-                                .handleNotificationOpened(function (jsonData) {
-rr=1; 
-ref.close();
-var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
-var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-                                                          })
-                       .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.InAppAlert)
+                       .handleNotificationOpened(didOpenRemoteNotificationCallBack) 
+                       .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
                                 .iOSSettings(iosSettings)
                                 .endInit();
         
@@ -68,11 +74,7 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
     }
 };
 
-function didReceiveRemoteNotificationCallBack(jsonData) {
-ref.close();
-var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-rr=1;    
-}
+
 
 
 
