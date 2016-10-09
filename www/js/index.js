@@ -37,7 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        
+var rr=0;
                 // Enable to debug issues.
 //window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 
@@ -52,11 +52,12 @@ var app = {
                                 .iOSSettings(iosSettings)
                                 .endInit();
         
-        
-            window.plugins.OneSignal.getIds(function(ids) {
+          if(rr=='0'){
+     window.plugins.OneSignal.getIds(function(ids) {
 ipush = ids.userId;
 var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
     });
+          }
         
         
     }
@@ -64,11 +65,13 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
 
 function didReceiveRemoteNotificationCallBack(jsonData) {   
      var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-    }
+rr=1;    
+}
 
 function didOpenRemoteNotificationCallBack (jsonData) {
 var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
      var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-    }
+rr=1;   
+}
 
 app.initialize();
