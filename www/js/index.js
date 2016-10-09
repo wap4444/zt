@@ -51,10 +51,12 @@ var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_bl
 }
 
 function didOpenRemoteNotificationCallBack(jsonData) {
-alert('gfgfgfg');
+alert("Notification opened:\n" + JSON.stringify(jsonData));
     rr=1;    
-var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
-var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+//var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
+//var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+  var ref = cordova.InAppBrowser.open('https://www.ps.kz/', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+  
  }
 
         window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "565071945004")
@@ -64,12 +66,14 @@ var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,tool
                                 .iOSSettings(iosSettings)
                                 .endInit();
         
-          if(rr=='0'){
+    
 window.plugins.OneSignal.getIds(function(ids) {
 ipush = ids.userId;
+         if(rr=='1'){}
+       else{
 var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-     });
           }
+          });
         
         
     }
