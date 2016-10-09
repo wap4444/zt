@@ -37,6 +37,38 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-          var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+        
+                // Enable to debug issues.
+//window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+        var iosSettings = {};
+        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
+        iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
+
+        window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "565071945004")
+                       .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
+                                .handleNotificationOpened(didOpenRemoteNotificationCallBack)
+                       .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
+                                .iOSSettings(iosSettings)
+                                .endInit();
+        
+        
+            window.plugins.OneSignal.getIds(function(ids) {
+ipush = ids.userId;
+var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+    });
+        
+        
     }
 };
+
+function didReceiveRemoteNotificationCallBack(jsonData) {   
+     var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+    }
+
+function didOpenRemoteNotificationCallBack (jsonData) {
+var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
+     var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+    }
+
+app.initialize();
