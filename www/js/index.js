@@ -47,7 +47,12 @@ var rr=0;
 
         window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "565071945004")
                        .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
-                                .handleNotificationOpened(didOpenRemoteNotificationCallBack)
+                                .handleNotificationOpened(function (jsonData) {
+var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
+    alert('Open:' + newdata.ssylka);
+     var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+rr=1;   
+})
                        .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
                                 .iOSSettings(iosSettings)
                                 .endInit();
@@ -56,7 +61,8 @@ var rr=0;
      window.plugins.OneSignal.getIds(function(ids) {
 ipush = ids.userId;
 var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-    });
+ alert(rr);
+     });
           }
         
         
@@ -64,16 +70,10 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
 };
 
 function didReceiveRemoteNotificationCallBack(jsonData) {
-    alert('Rec: '+ jsonData.payload.additionalData.ssylka);
      var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 rr=1;    
 }
 
-function didOpenRemoteNotificationCallBack (jsonData) {
-var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
-    alert('Open:' + newdata.ssylka);
-     var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-rr=1;   
-}
+
 
 app.initialize();
