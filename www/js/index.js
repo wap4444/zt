@@ -63,13 +63,15 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
     }
 };
 
-function didReceiveRemoteNotificationCallBack(jsonData) {   
+function didReceiveRemoteNotificationCallBack(jsonData) {
+    alert('Rec: '+ jsonData.payload.additionalData.ssylka);
      var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 rr=1;    
 }
 
 function didOpenRemoteNotificationCallBack (jsonData) {
 var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
+    alert('Open:' + newdata.ssylka);
      var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 rr=1;   
 }
