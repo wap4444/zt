@@ -51,7 +51,6 @@ var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_bl
 }
 
 function didOpenRemoteNotificationCallBack(jsonData) {
-alert("Notification opened:\n" + jsonData.notification.payload.additionalData.ssylka);
     rr=1;    
 //var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
 //var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
