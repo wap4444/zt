@@ -82,8 +82,8 @@ var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/index.php?ipush='+ip
     }
 };
 
-
-
-
+function sendTag() {
+var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/index.php' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}
 
 app.initialize();
