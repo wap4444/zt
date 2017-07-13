@@ -62,7 +62,7 @@ var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,tool
   
  }
 
-        window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "565071945004")
+        window.plugins.OneSignal.startInit( "27390e58-c5bb-4ce0-bb1d-5cdb7b97de8c", "565071945004")
                        .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
                        .handleNotificationOpened(didOpenRemoteNotificationCallBack) 
                        .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
@@ -74,7 +74,7 @@ window.plugins.OneSignal.getIds(function(ids) {
 ipush = ids.userId;
          if(rr=='1'){}
        else{
-var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/index.php?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
           }
           });
         
@@ -83,7 +83,7 @@ var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/index.php?ipush='+ip
 };
 
 function sendTag() {
-var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/index.php' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
 
 app.initialize();
