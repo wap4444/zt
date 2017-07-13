@@ -37,6 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 var rr=0;
                 // Enable to debug issues.
 //window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
