@@ -5,13 +5,13 @@
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-  id        = "kz.topstar" 
+  id        = "kz.ksk" 
       version   = "1.2.1">
 
-    <name>Top Star Fitness Club</name>
+    <name>Умный дом</name>
 
     <description>
-Мобильное приложение для клиентов клуба Top-Star
+Мобильное приложение для жителей города Павлодар
     </description>
 
     <author href="http://phonegap.com" email="elegant4444@gmail.com">
