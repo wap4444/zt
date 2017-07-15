@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -37,14 +38,49 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        alert('1');
-        var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+        
+        // Enable to debug issues.
+        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+        var iosSettings = {};
+        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
+        iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
+
+        window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "")
+                                .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
+                                .handleNotificationOpened(didOpenRemoteNotificationCallBack)
+                                .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
+                                .iOSSettings(iosSettings)
+                                .endInit();
     }
 };
 
+function didReceiveRemoteNotificationCallBack(jsonData) {
+        alert("Notification received:\n" + JSON.stringify(jsonData));
+        console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+    }
+function didOpenRemoteNotificationCallBack (jsonData) {
+        alert("Notification opened:\n" + JSON.stringify(jsonData));
+        console.log('didOpenRemoteNotificationCallBack: ' + JSON.stringify(jsonData));   
+    }
+
 function sendTag() {
-var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+    window.plugins.OneSignal.sendTag("PhoneGapKey", "PhoneGapValue");
+}
+function getIds() {
+    window.plugins.OneSignal.getIds(function(ids) {
+        document.getElementById("OneSignalUserId").innerHTML = "UserId: " + ids.userId;
+        document.getElementById("OneSignalPushToken").innerHTML = "PushToken: " + ids.pushToken;
+        console.log('getIds: ' + JSON.stringify(ids));
+    });
 }
 
 app.initialize();
