@@ -37,15 +37,13 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-  alert('receivedEvent');
-var rr=0;
-                // Enable to debug issues.
-//window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+        alert('1');
+        var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 
     }
 };
+
 function sendTag() {
-     alert('sendTag');
 var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
 
