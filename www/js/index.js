@@ -37,51 +37,12 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+  
 var rr=0;
                 // Enable to debug issues.
 //window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 
-        var iosSettings = {};
-        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
-        iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
-        
-function didReceiveRemoteNotificationCallBack(jsonData) {
-    rr=1;    
-var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-}
-
-function didOpenRemoteNotificationCallBack(jsonData) {
-    rr=1;  
-    
-   // Для Andori
-var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
-var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-
-  //  Для Iphone
-    //  var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-  
- }
-
-        window.plugins.OneSignal.startInit( "27390e58-c5bb-4ce0-bb1d-5cdb7b97de8c", "565071945004")
-                       .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
-                       .handleNotificationOpened(didOpenRemoteNotificationCallBack) 
-                       .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
-                                .iOSSettings(iosSettings)
-                                .endInit();
-        
-    
-window.plugins.OneSignal.getIds(function(ids) {
-ipush = ids.userId;
-         if(rr=='1'){}
-       else{
-var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-          }
-          });
-        
-        
-    }
-};
+   
 
 function sendTag() {
 var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
