@@ -38,7 +38,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var ref = cordova.InAppBrowser.open('http://google.com' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+        var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/' , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
     }
 };
 
