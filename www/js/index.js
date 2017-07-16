@@ -39,5 +39,6 @@ var app = {
     receivedEvent: function(id) {
 var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
     }
+};
 
 app.initialize();
