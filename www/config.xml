@@ -5,8 +5,9 @@
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-  id        = "kz.ksktest1" 
-      version   = "1.2.3">
+ <!--IPHONE  id        = "kz.ksktest1" -->
+id        = "kz.mirada.project_ksk"
+      version   = "1.2.4">
 
     <name>Умный дом</name>
 
