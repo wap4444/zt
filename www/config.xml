@@ -25,7 +25,9 @@ MaksimMorozov
     <preference name="DisallowOverscroll"         value="false" />
     <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-minSdkVersion"      value="14" />
-      <preference name="orientation" value="portrait" />
+     <preference name="orientation" value="portrait" />
+      <!-- Настройки для Apple -->
+<preference name="target-device" value="handset" />
 
     <!-- Define a specific version of PhoneGap to build into your app. -->
     <!-- <preference name="phonegap-version"       value="cli-6.0.0" /> -->
