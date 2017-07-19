@@ -6,7 +6,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
  id        = "kz.ksktest1"
-      version   = "1.2.6">
+      version   = "1.2.7">
 
     <name>Умный дом</name>
 
