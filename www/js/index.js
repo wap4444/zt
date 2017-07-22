@@ -19,11 +19,30 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        
+function didReceiveRemoteNotificationCallBack(jsonData) {   
+//rr=1;
+//var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}
+
+function didOpenRemoteNotificationCallBack(jsonData) {
+//rr=1;
+//ref.close();
+// Для Andori
+//var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
+//alert(newdata.ssylka);
+//var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+ //  Для Iphone
+ //  var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}
+ 
+        
+        
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
         iosSettings["kOSSettingsKeyAutoPrompt"] = false;
         iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
-        
+
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ
            window.plugins.OneSignal
           .startInit("82b9c889-5c3a-4526-abaf-271d6d269892")
