@@ -29,11 +29,11 @@ function didOpenRemoteNotificationCallBack(jsonData) {
 rr=2;
 //ref.close();
 // Для Andori
-//var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
+var newdata = JSON.parse ( jsonData.notification.payload.additionalData );
 //alert(newdata.ssylka);
-//var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
  //  Для Iphone
-   var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+ //  var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
  
         
