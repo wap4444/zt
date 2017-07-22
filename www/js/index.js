@@ -19,10 +19,10 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        
+        rr=1;
 function didReceiveRemoteNotificationCallBack(jsonData) {   
-//rr=1;
-//var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+rr=2;
+var ref = cordova.InAppBrowser.open(jsonData.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
 
 function didOpenRemoteNotificationCallBack(jsonData) {
@@ -53,9 +53,12 @@ function didOpenRemoteNotificationCallBack(jsonData) {
           .endInit();
         
         window.plugins.OneSignal.getIds(function(ids) {
-        ipush = ids.userId;
+                    ipush = ids.userId;
+            if(rr==1)
+            {
             var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-        });
+            }       
+            });
         
 
     }
