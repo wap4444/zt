@@ -40,7 +40,7 @@ var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,tool
         
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
-        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
+        iosSettings["kOSSettingsKeyAutoPrompt"] = false;
         iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
 
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ
