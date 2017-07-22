@@ -40,7 +40,7 @@ function didOpenRemoteNotificationCallBack(jsonData) {
         
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
-        iosSettings["kOSSettingsKeyAutoPrompt"] = false;
+        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
         iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
 
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ
