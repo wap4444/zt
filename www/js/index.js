@@ -19,13 +19,28 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        
+                //Настройка ПУШЕЙ ДЛЯ АЙФОНА
+        var iosSettings = {};
+        iosSettings["kOSSettingsKeyAutoPrompt"] = false;
+        iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
+
+        //ПОДКЛЮЧЕНИЕ ПУШЕЙ
+           window.plugins.OneSignal
+          .startInit("5edd010b-8e89-4860-8835-cfab570394a0")
+          .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
+          .handleNotificationOpened(didOpenRemoteNotificationCallBack)
+              .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
+          .iOSSettings(iosSettings)
+          .endInit();
+        
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
-alert('Off');
+ref.close();
+$('#message').html('Отсутствует соединение с Интернетом');
 }
-        
-        
-        
+document.addEventListener("online", onOnline, false);
+function onOnline() {
         rr=1;
 function didReceiveRemoteNotificationCallBack(jsonData) {   
 rr=2;
@@ -42,32 +57,16 @@ var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,tool
  //  Для Iphone
  //  var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
- 
-        
-        
-        //Настройка ПУШЕЙ ДЛЯ АЙФОНА
-        var iosSettings = {};
-        iosSettings["kOSSettingsKeyAutoPrompt"] = false;
-        iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
-
-        //ПОДКЛЮЧЕНИЕ ПУШЕЙ
-           window.plugins.OneSignal
-          .startInit("5edd010b-8e89-4860-8835-cfab570394a0")
-          .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
-          .handleNotificationOpened(didOpenRemoteNotificationCallBack)
-              .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
-          .iOSSettings(iosSettings)
-          .endInit();
-        
-        window.plugins.OneSignal.getIds(function(ids) {
+   
+            window.plugins.OneSignal.getIds(function(ids) {
                     ipush = ids.userId;
             if(rr==1)
             {
             var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
             }       
             });
-        
-
+    
+}   
     }
 };
 
