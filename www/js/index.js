@@ -24,6 +24,8 @@ function onOffline() {
 alert('Off');
 }
         
+        window.plugins.socialsharing.share('Message only')
+        
         
         
         rr=1;
