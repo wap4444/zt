@@ -22,6 +22,7 @@ var app = {
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
 alert('Off');
+ref.close();
 }
         
         window.plugins.socialsharing.share('Message only')
