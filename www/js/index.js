@@ -19,6 +19,13 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+document.addEventListener("offline", onOffline, false);
+function onOffline() {
+alert('Off');
+}
+        
+        
+        
         rr=1;
 function didReceiveRemoteNotificationCallBack(jsonData) {   
 rr=2;
