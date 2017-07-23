@@ -21,8 +21,6 @@ var app = {
     receivedEvent: function(id) {
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
-ref.close();
-$('#message').html('Нет инета');
 alert('Off');
 }
         
