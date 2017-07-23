@@ -40,6 +40,20 @@ MaksimMorozov
     <plugin name="cordova-plugin-whitelist"           source="npm" spec="~1.2.1" />
     <gap:plugin name="onesignal-cordova-plugin" source="npm" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
+      <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+      <!-- for iOS -->
+<feature name="SocialSharing">
+  <param name="ios-package" value="SocialSharing" />
+</feature>
+<!-- for Android (you will find one in res/xml) -->
+<feature name="SocialSharing">
+  <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+</feature>
+<!-- for Windows Phone -->
+<feature name="SocialSharing">
+  <param name="wp-package" value="SocialSharing"/>
+</feature>
+      
 
 
 <!-- Recommend the newest cli but requires cli-5.1.1+ and gradle for Android. -->
