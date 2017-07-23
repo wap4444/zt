@@ -22,10 +22,10 @@ var app = {
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
 alert('Off');
-document.location.href = 'spec.html';
+document.location.href = 'index.html';
 }
-document.addEventListener("online", onOnline, false);
-function onOnline() {
+document.addEventListener("online", onOnlineEvent, false);
+function onOnlineEvent() {
 alert('On');
 document.location.href = 'index.html';      
 }
