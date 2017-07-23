@@ -41,6 +41,7 @@ $('#message').html('Отсутствует соединение с Интерн�
 }
 document.addEventListener("online", onOnline, false);
 function onOnline() {
+    $('#message').html('Загрузка данных');
         rr=1;
 function didReceiveRemoteNotificationCallBack(jsonData) {   
 rr=2;
