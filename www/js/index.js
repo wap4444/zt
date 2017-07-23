@@ -30,7 +30,6 @@ function onOnline() {
          
 }
         
-        window.plugins.socialsharing.share('Message only')
         
         
         
