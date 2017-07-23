@@ -26,8 +26,8 @@ document.location.href = 'spec.html';
 }
 document.addEventListener("online", onOnline, false);
 function onOnline() {
-      var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-         
+alert('On');
+document.location.href = 'index.html';      
 }
         
         
