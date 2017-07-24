@@ -22,7 +22,6 @@ var app = {
         var ref='';
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
-   ref.close();
     $('.cover-copy').html('Отсутсвует соединение с Интернет');
 }
 document.addEventListener("online", onOnlineEvent, false);
