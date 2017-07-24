@@ -21,8 +21,10 @@ var app = {
     receivedEvent: function(id) {
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
+     var ref = cordova.InAppBrowser.close();
     $('.cover-copy').html('Отсутсвует соединение с Интернет');
-    ref.close();
+
+         
 }
 document.addEventListener("online", onOnlineEvent, false);
 function onOnlineEvent() {
