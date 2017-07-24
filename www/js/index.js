@@ -22,12 +22,13 @@ var app = {
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
 alert('Off');
+    $('.cover-copy').html('Отсутсвует соединение с Интернет');
 document.location.href = 'index.html';
 }
 document.addEventListener("online", onOnlineEvent, false);
 function onOnlineEvent() {
 alert('On');
-document.location.href = 'index.html';      
+    $('.cover-copy').html('Приложение для жителей города Павлодар');    
 }
         
         
