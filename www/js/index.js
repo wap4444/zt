@@ -19,6 +19,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        var ref='';
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
    ref.close();
