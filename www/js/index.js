@@ -21,14 +21,13 @@ var app = {
     receivedEvent: function(id) {
 document.addEventListener("offline", onOffline, false);
 function onOffline() {
-     var ref = cordova.InAppBrowser.close();
+   ref.close();
     $('.cover-copy').html('Отсутсвует соединение с Интернет');
-
-         
 }
 document.addEventListener("online", onOnlineEvent, false);
 function onOnlineEvent() {
-    $('.cover-copy').html('Приложение для жителей города Павлодар');    
+    $('.cover-copy').html('Приложение для жителей города Павлодар');  
+     var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
         
         
