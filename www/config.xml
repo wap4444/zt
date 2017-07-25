@@ -5,13 +5,13 @@
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
- id        = "kz.ksktest1"
-      version   = "1.2.9">
+ id        = "kz.ekskaksu"
+      version   = "1.0.0">
 
-    <name>Умный дом</name>
+    <name>Электронный КСК</name>
 
     <description>
-Мобильное приложение для жителей города Павлодар
+Мобильное приложение для жителей города Аксу
     </description>
 
     <author href="http://phonegap.com" email="elegant4444@gmail.com">
