@@ -59,7 +59,7 @@ var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,tool
 
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ
            window.plugins.OneSignal
-          .startInit("af27a5e0-a45e-4041-8251-7d8e05c5b58d")
+          .startInit("78520dbf-0cbd-41b3-aed3-1f27aba825e9")
           .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
           .handleNotificationOpened(didOpenRemoteNotificationCallBack)
               .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
