@@ -27,7 +27,7 @@ function onOffline() {
 document.addEventListener("online", onOnlineEvent, false);
 function onOnlineEvent() {
     $('.cover-copy').html('Приложение для жителей города Павлодар');  
-     var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+     var ref = cordova.InAppBrowser.open('http://aksu.controlsoft.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }
         
         
@@ -59,7 +59,7 @@ var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,tool
 
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ
            window.plugins.OneSignal
-          .startInit("5edd010b-8e89-4860-8835-cfab570394a0")
+          .startInit("af27a5e0-a45e-4041-8251-7d8e05c5b58d")
           .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
           .handleNotificationOpened(didOpenRemoteNotificationCallBack)
               .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
@@ -70,7 +70,7 @@ var ref = cordova.InAppBrowser.open(newdata.ssylka , '_blank', 'location=no,tool
                     ipush = ids.userId;
             if(rr==1)
             {
-            var ref = cordova.InAppBrowser.open('http://mirada.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+            var ref = cordova.InAppBrowser.open('http://aksu.controlsoft.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
             }       
             });
         
