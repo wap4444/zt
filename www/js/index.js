@@ -57,7 +57,7 @@ rr=2;
                     ipush = ids.userId;
             if(rr==1)
             {
-            var ref = cordova.InAppBrowser.open('http://aksu.controlsoft.kz/project_ksk/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+            var ref = cordova.InAppBrowser.open('http://araik.controlsoft.kz/fr7/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
             }       
             });
         
