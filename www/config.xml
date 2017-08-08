@@ -5,13 +5,13 @@
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
- id        = "kz.ekskaksu"
-      version   = "1.0.5">
+ id        = "kz.linguastan"
+      version   = "1.0.0">
 
-    <name>Электронный КСК</name>
+    <name>Linguastan</name>
 
     <description>
-Мобильное приложение для жителей города Аксу
+Linguastan - Языковой центр в Павлодаре
     </description>
 
     <author href="http://phonegap.com" email="elegant4444@gmail.com">
