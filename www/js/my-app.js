@@ -114,7 +114,8 @@ encodingType: Camera.EncodingType.JPEG,
 targetWidth:400  });
 
 function onSuccess(imageURI) {
-fotoUpload(imageURI, localStorage.ClientId);
+clid1=localStorage.ClientId;
+fotoUpload(imageURI,clid1);
 }
 
 function onFail(message) {
@@ -130,6 +131,7 @@ $.ajax({
       		cache: false,
       		contentType: "application/x-www-form-urlencoded",
 success: function (result) {
+alert(result);
 userUpd();
 }
 });
