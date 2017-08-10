@@ -85,27 +85,24 @@ $('.newspost').html('<div class="card demo-card-header-pic">\
   <div class="card-content">\
     <div class="card-content-inner">\
       <p>'+blogSp[1].text+'<br>\
-<a id="shara">Расшарить</a></p>\
+<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'">Расшарить</a></p>\
     </div>\
   </div>\
 </div>');
+		  
 },
 error: function(XMLHttpRequest, textStatus, errorThrown){
 	myApp.alert("Ошибка");
 }
 });
-	
-	$(document).on("click","#shara", function() {
-myApp.alert("Шара");
-		
-window.plugins.socialsharing.share(
-  'Optional message',
-  blogSp[1].text);
-		
-	});
-
 });
 
+$(document).on("click","#shara", function() {
+myApp.alert("Шара");
+	nameShara=$(this).attr(name);
+	textShara=$(this).attr(text);
+window.plugins.socialsharing.share(nameShara,textShara);		
+});
 
 if(localStorage.phone){
 $('#login').hide();	
