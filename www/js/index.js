@@ -54,11 +54,7 @@ rr=2;
           .endInit();
         
         window.plugins.OneSignal.getIds(function(ids) {
-                    ipush = ids.userId;
-            if(rr==1)
-            {
-            var ref = cordova.InAppBrowser.open('http://araik.controlsoft.kz/fr7/index.html?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-            }       
+                    ipush = ids.userId;      
             });
         
 
