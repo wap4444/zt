@@ -112,6 +112,7 @@ navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 function onSuccess(imageURI) {
    var image = document.getElementById('myImage');
     image.src = imageURI;
+	alert(imageURI);
 }
 
 function onFail(message) {
