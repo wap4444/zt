@@ -108,6 +108,10 @@ window.plugins.socialsharing.share(nameShara,textShara);
 $(document).on("click","#cam", function() {
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 destinationType: Camera.DestinationType.DATA_URL ,
+correctOrientation:true,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
 targetWidth:500  });
 
 function onSuccess(imageURI) {
