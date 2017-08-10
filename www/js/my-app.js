@@ -111,7 +111,7 @@ navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 
 function onSuccess(imageURI) {
 var image = document.getElementById('myImage');
-image.src = imageURI;
+image.src = "data:image/jpeg;base64,"+imageURI;
 alert("data:image/jpeg;base64,"+imageURI);
 $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/admin/api/appPhoto.php',data: {image:imageURI},
 success: function(data){
