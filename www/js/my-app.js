@@ -125,12 +125,12 @@ function onFail(message) {
 }		
 });
 
-function fotoUpload(imageData,ClientId){
-	alert('FotoUpload');
+function fotoUpload(imageData, ClientId){
+	alert(ClientId);
 $.ajax({
       		type: "POST",
       		url: "http://araik.controlsoft.kz/admin/api/appPhoto.php",
-      		data: { image:imageData,ClientId:ClientId},
+      		data: { image:imageData, ClientId:ClientId},
       		cache: false,
       		contentType: "application/x-www-form-urlencoded",
 success: function (result) {
@@ -153,6 +153,25 @@ $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg"
 };
 
 function userUpd(){
+
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/userInfo.php',data: {clid:localStorage.ClientId},
+success: function(data){
+if(data.charAt(0)=='E'){myApp.alert('Неверный пароль');}
+else{
+clientData = JSON.parse(data);
+localStorage.pass=clientData[0].pass;
+localStorage.ClientId=clientData[0].id;
+localStorage.phone=clientData[0].phone;
+localStorage.secondName=clientData[0].secondName;
+localStorage.clientPhoto=clientData[0].photo;
+}
+},
+error: function(XMLHttpRequest, textStatus, errorThrown){
+	myApp.alert("Ошибка");
+}
+});
+	
+	
 $('#login').hide();
 $('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
 $('#clientInfoArea').html(localStorage.secondName);	
