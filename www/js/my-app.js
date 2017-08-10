@@ -118,19 +118,28 @@ function onSuccess(imageURI) {
 var image = document.getElementById('myImage');
 image.src = "data:image/jpeg;base64,"+imageURI;
 alert("data:image/jpeg;base64,"+imageURI);
-$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/admin/api/appPhoto.php',data: {image:imageURI},
-success: function(data){
-alert(data);},
-error: function(XMLHttpRequest, textStatus, errorThrown){
-	myApp.alert("Ошибка");
-}
-       });
+fotoUpload(imageURI);
 }
 
 function onFail(message) {
     alert('Failed because: ' + message);
 }		
 });
+
+      function fotoUpload(imageData){
+      	//alert(imageData);
+      	$.ajax({
+      		type: "POST",
+      		url: "http://araik.controlsoft.kz/admin/api/appPhoto.php",
+      		data: { image:imageData},
+      		cache: false,
+      		contentType: "application/x-www-form-urlencoded",
+      		success: function (result) {
+      			alert("upload OK: "+ result);
+      		}
+      	});
+      });
+
 
 if(localStorage.phone){
 $('#login').hide();	
