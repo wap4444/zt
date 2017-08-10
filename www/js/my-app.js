@@ -16,7 +16,7 @@ var mySwiperSlow = myApp.swiper('.swiper-slow', {
 });   
 
 
-	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/blogs.php',dataType : "json",
+	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/blogs.php',dataType : "json",
 success: function(blogSp){
 		  $('#postss').empty();
 $.each(blogSp, function(key1, data1) {
@@ -48,7 +48,7 @@ myApp.onPageInit('about', function (page) {
 myApp.onPageInit('blogs', function (page) {
       myApp.closePanel();
 
-	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/blogs.php',dataType : "json",
+	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/blogs.php',dataType : "json",
 success: function(blogSp){
 		  $('#postss').empty();
 $.each(blogSp, function(key1, data1) {
@@ -77,7 +77,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
  // Страница с записью
 myApp.onPageInit('blogpost', function (page) {
 var postid = page.query.id;
-	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/blogs.php',dataType : "json",data:{	id: postid},
+	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/blogs.php',dataType : "json",data:{	id: postid},
 	  success: function(blogSp){
 $('#blogname').html(blogSp[1].name);
 $('.newspost').html('<div class="card demo-card-header-pic">\
@@ -134,7 +134,7 @@ $(document).on("click","#GoReg", function() {
 	if(clientPhoneReg.length<11){
 		myApp.alert('Неверный номер телефона');
 	}else{
-$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/reg.php',data: {clientPhoneReg:clientPhoneReg},
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/reg.php',data: {clientPhoneReg:clientPhoneReg},
 success: function(data){
 if(data.charAt(0)=='E'){myApp.alert('Клиент с таким номером телефона не найден');}
 else{
@@ -155,7 +155,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 $(document).on("click","#GoReg1", function() {
 clientPhonePass=$('#clientPhonePass').val();
 
-$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass},
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass},
 success: function(data){
 if(data.charAt(0)=='E'){myApp.alert('Неверный пароль');}
 else{
