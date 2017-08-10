@@ -107,12 +107,19 @@ window.plugins.socialsharing.share(nameShara,textShara);
 
 $(document).on("click","#cam", function() {
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI });
+    destinationType: Camera.DestinationType.DATA_URL });
 
 function onSuccess(imageURI) {
-   var image = document.getElementById('myImage');
-    image.src = imageURI;
-	alert(imageURI);
+var image = document.getElementById('myImage');
+image.src = imageURI;
+alert("data:image/jpeg;base64,"+imageURI);
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/admin/api/appPhoto.php',data: {image:imageURI},
+success: function(data){
+alert(data);},
+error: function(XMLHttpRequest, textStatus, errorThrown){
+	myApp.alert("Ошибка");
+}
+       });
 }
 
 function onFail(message) {
