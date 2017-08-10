@@ -114,8 +114,10 @@ encodingType: Camera.EncodingType.JPEG,
 targetWidth:400  });
 
 function onSuccess(imageURI) {
+	alert(imageURI);
+	$("#cam").attr("src","data:image/jpeg;base64," + imageURI);
 clid1=localStorage.ClientId;
-fotoUpload(imageURI,clid1);
+fotoUpload(imageURI, clid1);
 }
 
 function onFail(message) {
@@ -124,6 +126,7 @@ function onFail(message) {
 });
 
 function fotoUpload(imageData,ClientId){
+	alert('FotoUpload');
 $.ajax({
       		type: "POST",
       		url: "http://araik.controlsoft.kz/admin/api/appPhoto.php",
