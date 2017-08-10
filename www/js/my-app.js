@@ -108,8 +108,8 @@ window.plugins.socialsharing.share(nameShara,textShara);
 $(document).on("click","#cam", function() {
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 destinationType: Camera.DestinationType.DATA_URL ,
-sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-popoverOptions: new CameraPopoverOptions(0, 0, 300, 300, Camera.PopoverArrowDirection.ARROW_ANY)});
+targetWidth:100,
+targetHeight:50				       });
 
 function onSuccess(imageURI) {
 var image = document.getElementById('myImage');
