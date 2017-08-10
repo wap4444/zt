@@ -1,22 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Gist
- @wap4444
- Sign out
- Unwatch 1
-  Star 0
-  Fork 0 wap4444/araik
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Settings Insights 
-Branch: master Find file Copy patharaik/www/js/my-app.js
-6f03e05  just now
-@wap4444 wap4444 Update my-app.js
-1 contributor
-RawBlameHistory     
-249 lines (213 sloc)  7.92 KB
 // Initialize your app
 var myApp = new Framework7({
 	modalTitle: 'Lingustan',
@@ -152,7 +133,7 @@ success: function (result) {
 userUpd();
 }
 });
-});
+};
 
 //Вывод групп клиента
 function GetUserProg(ClientId){
