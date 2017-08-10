@@ -151,6 +151,7 @@ $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg"
 };
 
 function userUpd(){
+$('#login').hide();
 $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/userInfo.php',data: {clid:localStorage.ClientId},
 success: function(data){
 clientData = JSON.parse(data);
@@ -168,6 +169,7 @@ GetUserProg(localStorage.ClientId);
 
 
 if(localStorage.phone){
+	
 userUpd();
 }
 
@@ -217,7 +219,9 @@ localStorage.ClientId=clientData[0].id;
 localStorage.phone=clientData[0].phone;
 localStorage.secondName=clientData[0].secondName;
 localStorage.clientPhoto=clientData[0].photo;
-myApp.closeModal();
+	$('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
+	$('#login').hide();
+	myApp.closeModal();
 myApp.alert(localStorage.secondName+', спасибо за регистрацию!');
 }
 },
