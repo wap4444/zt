@@ -4,24 +4,174 @@
 	    <meta charset="UTF-8">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-	 <link href="css/main.css" rel="stylesheet">
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+	<style>
+	.swiper-slide {
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+.swiper-slide span {
+  text-align:center;
+  display:block;
+  margin: 20px;
+  font-size:21px;
+}
+.swiper-container {
+  height: 200px;
+  margin: 35px 0;
+}
+  .demo-card-header-pic .card-header {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+  }
+	</style>
     </head>
 <body id="top" style="text-align:center;">
 	
-	<div class="site-wrapper-inner">
-<div class="cover-container">
-<div class="masthead clearfix">
-<div class="inner">
-</div>
-</div><br> <div class="inner cover">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+    <div class="list-block">
+      <ul style="background:rgba(255, 255, 255, 0);">
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title"><a href="blog.html">Блог школы</a></div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title"><a href="about.html">Контакты</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
 
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+		    <div class="left">
+            <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">Linguastan</div>
+		    <div class="right">
+            <a id="login">Вход</a>
+            </div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+			
+			
+			
+			
+  <div class="swiper-container swiper-slow" style="margin:0px;">
+    <div class="swiper-pagination"></div>
+    <div class="swiper-wrapper">
+    </div>
+  </div>
+  
+  
+<div class="content-block" style="margin:0px;">
+      <div class="content-block-inner">
+<div class="row">
+        <div class="col-33" id="clientPhoto"></div>
+        <div class="col-66" id="clientInfoArea"></div>
 </div>
+	  </div>
+<div class="content-block-inner" id="lenta">
 </div>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	  
+</div>
+
+
+
+			  
+            </div>
+            </div>
+			
+			
+<div class="login-screen">
+ <div class="page-content login-screen-content">
+    <div class="login-screen-title">Регистрация</div>
+    <form>
+      <div class="list-block">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">Телефон</div>
+              <div class="item-input">
+                <input type="text" id="clientPhoneReg" autocomplete="off" placeholder="Ваш номер телефона"/>
+              </div>
+            </div>
+          </li>
+          <li class="item-content" id="passArea" style="display:none;">
+            <div class="item-inner">
+              <div class="item-title label">Пароль</div>
+              <div class="item-input">
+                <input type="text"  id="clientPhonePass" autocomplete="off" placeholder="Your password"/>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="list-block">
+        <ul>
+          <li><a class="item-link list-button" id="GoReg">Продолжить</a><a class="item-link list-button" id="GoReg1" style="display:none;">Продолжить</a></li>
+        </ul>
+        <div class="list-block-label">
+          <p>Наж</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+			
+			
+          </div>
+        </div>
+
+      </div>
+    </div>
+	    <!-- Jquery Core Js -->
+    <script src="http://araik.controlsoft.kz/admin/plugins/jquery/jquery.min.js"></script>
+	<!-- Input Mask Plugin Js -->
+    <script src="http://araik.controlsoft.kz/admin/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+		
+		
+		
         <script type="text/javascript" src="cordova.js"></script>
-	        <script type="text/javascript" src="jquery-latest.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
