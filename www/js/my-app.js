@@ -115,9 +115,6 @@ correctOrientation:true,
 targetWidth:500  });
 
 function onSuccess(imageURI) {
-var image = document.getElementById('myImage');
-image.src = "data:image/jpeg;base64,"+imageURI;
-alert("data:image/jpeg;base64,"+imageURI);
 fotoUpload(imageURI);
 }
 
@@ -135,15 +132,15 @@ function onFail(message) {
       		cache: false,
       		contentType: "application/x-www-form-urlencoded",
       		success: function (result) {
-      			alert("upload OK: "+ result);
+userUpd();
       		}
       	});
       });
 
+function userUpd(){
 
-if(localStorage.phone){
 $('#login').hide();	
-$('#clientPhoto').html('<img src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
+$('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
 $('#clientInfoArea').html(localStorage.secondName);
 
 
@@ -162,6 +159,9 @@ $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg"
 GetUserProg(localStorage.ClientId)
 }
 
+if(localStorage.phone){
+userUpd();
+}
 
 /////////////////////////////
 /////////////////////////////
