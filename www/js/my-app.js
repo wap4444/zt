@@ -104,6 +104,21 @@ myApp.alert("Шара");
 window.plugins.socialsharing.share(nameShara,textShara);		
 });
 
+
+$(document).on("click","#cam", function() {
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI });
+
+function onSuccess(imageURI) {
+   var image = document.getElementById('myImage');
+    image.src = imageURI;
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}		
+});
+
 if(localStorage.phone){
 $('#login').hide();	
 $('#clientPhoto').html('<img src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
