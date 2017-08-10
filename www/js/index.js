@@ -20,19 +20,6 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         
-        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI });
-
-function onSuccess(imageURI) {
-    $('#clientPhoto').attr('src',imageURI);
-}
-
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
-        
-        
-        
         rr=1;
 function didReceiveRemoteNotificationCallBack(jsonData) {   
 rr=2;
