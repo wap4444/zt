@@ -16,7 +16,7 @@ var mySwiperSlow = myApp.swiper('.swiper-slow', {
 });   
 
 
-	  $.ajax({type: 'POST',url: 'api/blogs.php',dataType : "json",
+	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/blogs.php',dataType : "json",
 success: function(blogSp){
 		  $('#postss').empty();
 $.each(blogSp, function(key1, data1) {
@@ -48,13 +48,13 @@ myApp.onPageInit('about', function (page) {
 myApp.onPageInit('blogs', function (page) {
       myApp.closePanel();
 
-	  $.ajax({type: 'POST',url: 'api/blogs.php',dataType : "json",
+	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/blogs.php',dataType : "json",
 success: function(blogSp){
 		  $('#postss').empty();
 $.each(blogSp, function(key1, data1) {
 $('#postss').append('\
 <div class="card demo-card-header-pic">\
-  <div style="background-image:url(../admin/'+blogSp[key1].img+')" valign="bottom" class="card-header color-white no-border">'+blogSp[key1].name+'</div>\
+  <div style="background-image:url(http://araik.controlsoft.kz/admin/'+blogSp[key1].img+')" valign="bottom" class="card-header color-white no-border">'+blogSp[key1].name+'</div>\
   <div class="card-content">\
     <div class="card-content-inner">\
       <p>'+blogSp[key1].text+'</p>\
@@ -77,11 +77,11 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
  // Страница с записью
 myApp.onPageInit('blogpost', function (page) {
 var postid = page.query.id;
-	  $.ajax({type: 'POST',url: 'api/blogs.php',dataType : "json",data:{	id: postid},
+	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/blogs.php',dataType : "json",data:{	id: postid},
 	  success: function(blogSp){
 $('#blogname').html(blogSp[1].name);
 $('.newspost').html('<div class="card demo-card-header-pic">\
-  <div style="background-image:url(../admin/'+blogSp[1].img+')" valign="bottom" class="card-header color-white no-border">'+blogSp[1].name+'</div>\
+  <div style="background-image:url(http://araik.controlsoft.kz/admin/'+blogSp[1].img+')" valign="bottom" class="card-header color-white no-border">'+blogSp[1].name+'</div>\
   <div class="card-content">\
     <div class="card-content-inner">\
       <p>'+blogSp[1].text+'</p>\
@@ -99,14 +99,14 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 if(localStorage.phone){
 $('#login').hide();	
-$('#clientPhoto').html('<img src="../admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
+$('#clientPhoto').html('<img src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
 $('#clientInfoArea').html(localStorage.secondName);
 
 
 //Вывод групп клиента
 function GetUserProg(ClientId){
 $('#allProfUser').empty();
-$.ajax({type: 'POST',url: '../admin/api/findClientProg.php',data: {ClientId:ClientId},dataType : "json",
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/admin/api/findClientProg.php',data: {ClientId:ClientId},dataType : "json",
 success: function(clientGroupSp){
 $.each(clientGroupSp, function(key1, data1) {
 $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg" progId="'+clientGroupSp[key1].id+'">'+clientGroupSp[key1].price_name+' (Осталось занятий: '+clientGroupSp[key1].count+' / Истекает: '+clientGroupSp[key1].data_end+') - <b>'+clientGroupSp[key1].grName+'</b> | Средняя оценка - '+clientGroupSp[key1].sr+'</span><br>');
@@ -134,7 +134,7 @@ $(document).on("click","#GoReg", function() {
 	if(clientPhoneReg.length<11){
 		myApp.alert('Неверный номер телефона');
 	}else{
-$.ajax({type: 'POST',url: 'api/reg.php',data: {clientPhoneReg:clientPhoneReg},
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/reg.php',data: {clientPhoneReg:clientPhoneReg},
 success: function(data){
 if(data.charAt(0)=='E'){myApp.alert('Клиент с таким номером телефона не найден');}
 else{
@@ -155,7 +155,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 $(document).on("click","#GoReg1", function() {
 clientPhonePass=$('#clientPhonePass').val();
 
-$.ajax({type: 'POST',url: 'api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass},
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass},
 success: function(data){
 if(data.charAt(0)=='E'){myApp.alert('Неверный пароль');}
 else{
@@ -166,7 +166,7 @@ localStorage.phone=clientData[0].phone;
 localStorage.secondName=clientData[0].secondName;
 localStorage.clientPhoto=clientData[0].photo;
 $('#login').hide();
-$('#clientPhoto').html('<img src="../'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
+$('#clientPhoto').html('<img src="http://araik.controlsoft.kz/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
 myApp.closeModal();
 myApp.alert(localStorage.secondName+', спасибо за регистрацию!');
 }
