@@ -100,19 +100,18 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 $(document).on("click","#shara", function() {
 myApp.alert("Шара");
 	nameShara=$(this).attr(name);
-	textShara=$(this).attr(text);
-window.plugins.socialsharing.share(nameShara,textShara);		
+	textShara=$(this).attr(text);	
 });
 
 
 $(document).on("click","#cam", function() {
-navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+navigator.camera.getPicture(onSuccess, onFail, { quality: 80,
 destinationType: Camera.DestinationType.DATA_URL ,
 correctOrientation:true,
-      sourceType: Camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: Camera.EncodingType.JPEG,
-targetWidth:500  });
+sourceType: Camera.PictureSourceType.CAMERA,
+allowEdit: true,
+encodingType: Camera.EncodingType.JPEG,
+targetWidth:400  });
 
 function onSuccess(imageURI) {
 fotoUpload(imageURI);
@@ -123,26 +122,18 @@ function onFail(message) {
 }		
 });
 
-      function fotoUpload(imageData){
-      	//alert(imageData);
-      	$.ajax({
+function fotoUpload(imageData){
+$.ajax({
       		type: "POST",
       		url: "http://araik.controlsoft.kz/admin/api/appPhoto.php",
       		data: { image:imageData},
       		cache: false,
       		contentType: "application/x-www-form-urlencoded",
-      		success: function (result) {
+success: function (result) {
 userUpd();
-      		}
-      	});
-      });
-
-function userUpd(){
-
-$('#login').hide();	
-$('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
-$('#clientInfoArea').html(localStorage.secondName);
-
+}
+});
+});
 
 //Вывод групп клиента
 function GetUserProg(ClientId){
@@ -152,15 +143,19 @@ success: function(clientGroupSp){
 $.each(clientGroupSp, function(key1, data1) {
 $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg" progId="'+clientGroupSp[key1].id+'">'+clientGroupSp[key1].price_name+' (Осталось занятий: '+clientGroupSp[key1].count+' / Истекает: '+clientGroupSp[key1].data_end+') - <b>'+clientGroupSp[key1].grName+'</b> | Средняя оценка - '+clientGroupSp[key1].sr+'</span><br>');
 });
-
 }
+
+function userUpd(userId){
+$('#login').hide();
+$('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
+$('#clientInfoArea').html(localStorage.secondName);	
 });
 };
-GetUserProg(localStorage.ClientId)
+GetUserProg(localStorage.ClientId);
 }
 
 if(localStorage.phone){
-userUpd();
+userUpd(localStorage.ClientId);
 }
 
 /////////////////////////////
@@ -209,8 +204,7 @@ localStorage.ClientId=clientData[0].id;
 localStorage.phone=clientData[0].phone;
 localStorage.secondName=clientData[0].secondName;
 localStorage.clientPhoto=clientData[0].photo;
-$('#login').hide();
-$('#clientPhoto').html('<img src="http://araik.controlsoft.kz/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
+	userUpd();
 myApp.closeModal();
 myApp.alert(localStorage.secondName+', спасибо за регистрацию!');
 }
