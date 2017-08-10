@@ -41,6 +41,7 @@ MaksimMorozov
 <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
 <plugin name="cordova-plugin-x-socialsharing" spec="5.1.8" />
 <plugin name="onesignal-cordova-plugin"  />
+<plugin name="cordova-plugin-camera" />
       <!-- for iOS -->
 <feature name="SocialSharing">
   <param name="ios-package" value="SocialSharing" />
