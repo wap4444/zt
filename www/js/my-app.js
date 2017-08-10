@@ -96,6 +96,8 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 });
 	
 	$(document).on("click","#shara", function() {
+myApp.alert("Шара");
+		
 window.plugins.socialsharing.share(
   'Optional message',
   blogSp[1].text);
