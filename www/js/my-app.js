@@ -1,3 +1,22 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Gist
+ @wap4444
+ Sign out
+ Unwatch 1
+  Star 0
+  Fork 0 wap4444/araik
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Settings Insights 
+Branch: master Find file Copy patharaik/www/js/my-app.js
+6f03e05  just now
+@wap4444 wap4444 Update my-app.js
+1 contributor
+RawBlameHistory     
+249 lines (213 sloc)  7.92 KB
 // Initialize your app
 var myApp = new Framework7({
 	modalTitle: 'Lingustan',
@@ -114,7 +133,7 @@ encodingType: Camera.EncodingType.JPEG,
 targetWidth:400  });
 
 function onSuccess(imageURI) {
-fotoUpload(imageURI);
+fotoUpload(imageURI, localStorage.ClientId);
 }
 
 function onFail(message) {
@@ -122,11 +141,11 @@ function onFail(message) {
 }		
 });
 
-function fotoUpload(imageData){
+function fotoUpload(imageData,ClientId){
 $.ajax({
       		type: "POST",
       		url: "http://araik.controlsoft.kz/admin/api/appPhoto.php",
-      		data: { image:imageData},
+      		data: { image:imageData,ClientId:ClientId},
       		cache: false,
       		contentType: "application/x-www-form-urlencoded",
 success: function (result) {
@@ -144,18 +163,19 @@ $.each(clientGroupSp, function(key1, data1) {
 $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg" progId="'+clientGroupSp[key1].id+'">'+clientGroupSp[key1].price_name+' (Осталось занятий: '+clientGroupSp[key1].count+' / Истекает: '+clientGroupSp[key1].data_end+') - <b>'+clientGroupSp[key1].grName+'</b> | Средняя оценка - '+clientGroupSp[key1].sr+'</span><br>');
 });
 }
+});
+};
 
-function userUpd(userId){
+function userUpd(){
 $('#login').hide();
 $('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
 $('#clientInfoArea').html(localStorage.secondName);	
-});
-};
 GetUserProg(localStorage.ClientId);
-}
+};
+
 
 if(localStorage.phone){
-userUpd(localStorage.ClientId);
+userUpd();
 }
 
 /////////////////////////////
