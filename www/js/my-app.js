@@ -166,7 +166,7 @@ function getDZ(){
 success: function(groupaUserSp){
 $.each(groupaUserSp, function(key1, data1) {
 	if(groupaUserSp[key1].video){
-$('#lenta').append('<a href="'+groupaUserSp[key1].video+'">Видео</a><hr>');
+$('#lenta').append('<a class="external" href="'+groupaUserSp[key1].video+'">Видео</a><hr>');
 	}
 
 });
