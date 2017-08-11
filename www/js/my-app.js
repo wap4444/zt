@@ -214,13 +214,8 @@ success: function(data){
 if(data.charAt(0)=='E'){myApp.alert('Неверный пароль');}
 else{
 clientData = JSON.parse(data);
-localStorage.pass=clientData[0].pass;
 localStorage.ClientId=clientData[0].id;
-localStorage.phone=clientData[0].phone;
-localStorage.secondName=clientData[0].secondName;
-localStorage.clientPhoto=clientData[0].photo;
-	$('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
-	$('#login').hide();
+	userUpd();
 	myApp.closeModal();
 myApp.alert(localStorage.secondName+', спасибо за регистрацию!');
 }
