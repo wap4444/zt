@@ -1,36 +1,63 @@
 // Initialize your app
 var myApp = new Framework7({
 	modalTitle: 'Lingustan',
-		pushState: true
-});
-
-// Export selectors engine
-var $$ = Dom7;
-
-var mySwiperSlow = myApp.swiper('.swiper-slow', {
+		pushState: true,
+		modalButtonCancel: 'Отмена',
+		fastClicks: true,
+		uniqueHistory: true,
+modalPreloaderTitle: 'Загрузка...',
+		
+	onPageInit: function (myApp, page) {
+    if (page.name === 'index') {
+		var mySwiperSlow = myApp.swiper('.swiper-slow', {
   pagination:'.swiper-slow .swiper-pagination',
           centeredSlides: true,
         autoplay: 2500,
         autoplayDisableOnInteraction: false,
 		loop: true
 });   
-
-
-	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/blogs.php',dataType : "json",
-success: function(blogSp){
-		  $('#postss').empty();
-$.each(blogSp, function(key1, data1) {
-	mySwiperSlow.appendSlide('  <div class="swiper-slide"><a href="blogpost.html?id='+blogSp[key1].id+'"><img src="http://araik.controlsoft.kz/admin/'+blogSp[key1].img+'"  style="width:100%;" ></a></div>');
+		
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/blogs.php',dataType : "json",
+success: function(blogSpSlide){
+$('#postss').empty();
+$.each(blogSpSlide, function(key1, data1) {
+mySwiperSlow.appendSlide('  <div class="swiper-slide"><a href="blogpost.html?id='+blogSpSlide[key1].id+'"><img src="http://araik.controlsoft.kz/admin/'+blogSpSlide[key1].img+'"  style="width:100%;" ></a></div>');
 });
-	
+},
+error: function(XMLHttpRequest, textStatus, errorThrown){
+myApp.alert("Ошибка");
+}
+});
+
+if(localStorage.phone){
+userUpd();
+}}
+    if (page.name === 'blogpost') {
+var postid = page.query.id;
+	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/blogs.php',dataType : "json",data:{	id: postid},
+	  success: function(blogSp){
+$('#blogname').html(blogSp[1].name);
+$('.newspost').html('<div class="card demo-card-header-pic">\
+  <div style="background-image:url(http://araik.controlsoft.kz/admin/'+blogSp[1].img+')" valign="bottom" class="card-header color-white no-border">'+blogSp[1].name+'</div>\
+  <div class="card-content">\
+    <div class="card-content-inner">\
+      <p>'+blogSp[1].text+'<br>\
+<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'">Расшарить</a></p>\
+    </div>\
+  </div>\
+</div>');
+		  
 },
 error: function(XMLHttpRequest, textStatus, errorThrown){
 	myApp.alert("Ошибка");
 }
 });
+	}
+	}
+});
 
-
-
+// Export selectors engine
+var $$ = Dom7;
 
 
 // Add view
@@ -73,29 +100,6 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 });
 });
 
-
- // Страница с записью
-myApp.onPageInit('blogpost', function (page) {
-var postid = page.query.id;
-	  $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/blogs.php',dataType : "json",data:{	id: postid},
-	  success: function(blogSp){
-$('#blogname').html(blogSp[1].name);
-$('.newspost').html('<div class="card demo-card-header-pic">\
-  <div style="background-image:url(http://araik.controlsoft.kz/admin/'+blogSp[1].img+')" valign="bottom" class="card-header color-white no-border">'+blogSp[1].name+'</div>\
-  <div class="card-content">\
-    <div class="card-content-inner">\
-      <p>'+blogSp[1].text+'<br>\
-<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'">Расшарить</a></p>\
-    </div>\
-  </div>\
-</div>');
-		  
-},
-error: function(XMLHttpRequest, textStatus, errorThrown){
-	myApp.alert("Ошибка");
-}
-});
-});
 
 $(document).on("click","#shara", function() {
 myApp.alert("Шара");
@@ -169,9 +173,7 @@ GetUserProg(localStorage.ClientId);
 };
 
 
-if(localStorage.phone){
-userUpd();
-}
+
 
 /////////////////////////////
 /////////////////////////////
