@@ -160,6 +160,7 @@ localStorage.ClientId=clientData[0].id;
 localStorage.phone=clientData[0].phone;
 localStorage.secondName=clientData[0].secondName;
 localStorage.clientPhoto=clientData[0].photo;
+	$('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
 }
 });
 
@@ -169,7 +170,6 @@ GetUserProg(localStorage.ClientId);
 
 
 if(localStorage.phone){
-	
 userUpd();
 }
 
