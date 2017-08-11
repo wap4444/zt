@@ -9,6 +9,7 @@ modalPreloaderTitle: 'Загрузка...',
 		
 	onPageInit: function (myApp, page) {
     if (page.name === 'index') {
+	    window.plugins.socialsharing.share('Message only');
 		var mySwiperSlow = myApp.swiper('.swiper-slow', {
   pagination:'.swiper-slow .swiper-pagination',
           centeredSlides: true,
@@ -31,6 +32,9 @@ myApp.alert("Ошибка");
 
 if(localStorage.phone){
 userUpd();
+
+}else{
+$('#lenta').html('Вам необходимо пройти регистрацию');
 }}
     if (page.name === 'blogpost') {
 var postid = page.query.id;
@@ -115,7 +119,8 @@ correctOrientation:true,
 sourceType: Camera.PictureSourceType.CAMERA,
 allowEdit: true,
 encodingType: Camera.EncodingType.JPEG,
-targetWidth:400  });
+targetWidth:400,
+targetHeight:400});
 
 function onSuccess(imageURI) {
 	$("#cam").attr("src","data:image/jpeg;base64," + imageURI);
@@ -144,6 +149,7 @@ userUpd();
 
 //Вывод групп клиента
 function GetUserProg(ClientId){
+
 $('#allProfUser').empty();
 $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/admin/api/findClientProg.php',data: {ClientId:ClientId},dataType : "json",
 success: function(clientGroupSp){
@@ -155,21 +161,35 @@ $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg"
 };
 
 function userUpd(){
+	$('#lenta').empty()
 $('#login').hide();
 $.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/userInfo.php',data: {clid:localStorage.ClientId},
 success: function(data){
 clientData = JSON.parse(data);
 localStorage.pass=clientData[0].pass;
 localStorage.ClientId=clientData[0].id;
+ClientId=clientData[0].id;
 localStorage.phone=clientData[0].phone;
 localStorage.secondName=clientData[0].secondName;
+localStorage.firstName=clientData[0].firstName;
 localStorage.clientPhoto=clientData[0].photo;
 	$('#clientPhoto').html('<img id="cam" src="http://araik.controlsoft.kz/admin/'+localStorage.clientPhoto+'"  width="100%" style="border-radius:50%">');
+	$('#clientInfoArea').html(localStorage.secondName+' '+localStorage.firstName);	
+	
+	
+	$('#allProfUser').empty();
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/admin/api/findClientProg.php',data: {ClientId:ClientId},dataType : "json",
+success: function(clientGroupSp){
+$.each(clientGroupSp, function(key1, data1) {
+$('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg" progId="'+clientGroupSp[key1].id+'">'+clientGroupSp[key1].price_name+' (Осталось занятий: '+clientGroupSp[key1].count+' / Истекает: '+clientGroupSp[key1].data_end+') - <b>'+clientGroupSp[key1].grName+'</b> | Средняя оценка - '+clientGroupSp[key1].sr+'</span><br>');
+});
+}
+});
+	
+	
 }
 });
 
-$('#clientInfoArea').html(localStorage.secondName);	
-GetUserProg(localStorage.ClientId);
 };
 
 
