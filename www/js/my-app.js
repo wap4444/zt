@@ -155,24 +155,11 @@ $.each(clientGroupSp, function(key1, data1) {
 	groupaUser=clientGroupSp[key1].groupa;
 $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg" progId="'+clientGroupSp[key1].id+'">'+clientGroupSp[key1].price_name+' (Осталось занятий: '+clientGroupSp[key1].count+' / Истекает: '+clientGroupSp[key1].data_end+') - <b>'+clientGroupSp[key1].grName+'</b> | Средняя оценка - '+clientGroupSp[key1].sr+'</span><br>');
 });
-getDZ();
 }
 });
 };
 
-function getDZ(){
 
-	$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/dz.php',data: {groupaUser:groupaUser},dataType : "json",
-success: function(groupaUserSp){
-$.each(groupaUserSp, function(key1, data1) {
-	if(groupaUserSp[key1].video){
-$('#lenta').append('1<iframe width="100%" height="315" src="'+groupaUserSp[key1].video+'" frameborder="0" allowfullscreen></iframe><hr>');
-	}
-
-});
-}
-});
-}
 
 function userUpd(){
 	$('#lenta').empty()
@@ -198,7 +185,7 @@ $.each(clientGroupSp, function(key1, data1) {
 		groupaUser=clientGroupSp[key1].groupa;
 $('#clientInfoArea').append('<hr><span style="font-size: 12px;" class="userProg" progId="'+clientGroupSp[key1].id+'">'+clientGroupSp[key1].price_name+' (Осталось занятий: '+clientGroupSp[key1].count+' / Истекает: '+clientGroupSp[key1].data_end+') - <b>'+clientGroupSp[key1].grName+'</b> | Средняя оценка - '+clientGroupSp[key1].sr+'</span><br>');
 });
-getDZ();
+
 }
 });
 	
