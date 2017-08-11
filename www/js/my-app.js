@@ -9,7 +9,6 @@ modalPreloaderTitle: 'Загрузка...',
 		
 	onPageInit: function (myApp, page) {
     if (page.name === 'index') {
-	    window.plugins.socialsharing.share('Message only');
 		var mySwiperSlow = myApp.swiper('.swiper-slow', {
   pagination:'.swiper-slow .swiper-pagination',
           centeredSlides: true,
