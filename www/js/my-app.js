@@ -163,13 +163,9 @@ myApp.alert("Шара");
 
 $(document).on("click","#cam", function() {
 	myApp.alert('cam');
-navigator.camera.getPicture(onSuccess, onFail, { quality: 80,
-destinationType: Camera.DestinationType.DATA_URL ,
-correctOrientation:true,
-sourceType: Camera.PictureSourceType.CAMERA,
-allowEdit: true,
-encodingType: Camera.EncodingType.JPEG,
-targetWidth:400  });
+	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.DATA_URL });
+
 
 function onSuccess(imageURI) {
 	$("#cam").attr("src","data:image/jpeg;base64," + imageURI);
