@@ -261,7 +261,16 @@ getDZ();
 
 
 
+$(document).on("click","#cam1", function() {
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+destinationType: Camera.DestinationType.DATA_URL });
 
+function onSuccess(imageURI) {}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}		
+});
 /////////////////////////////
 /////////////////////////////
 /////////////////////////////
