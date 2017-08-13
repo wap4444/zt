@@ -74,6 +74,56 @@ myApp.onPageInit('about', function (page) {
 	      myApp.closePanel();
 });
 
+function getDZUrok(	dzid ){
+
+	$('#dzPageTitle').text('Задание '+dzid);
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/dzOpis.php',dataType : "json",data:{id:dzid},
+success: function(dzOpis){
+if(dzOpis[1].video){
+	dzAct='<a class="external" href="'+dzOpis[1].video+'"><img src="http://ot003.ru/img-q5y5x5n4g4041456w4t4q2x5i5s574a4e4f5o4o494c4g5g4v5e464d474v254u5d4/blog/wp-content/uploads/2013/09/Fotolia_55858492_XS.jpg" width="100%"></a>';
+}else{
+	dzAct='<img src="../admin/'+dzOpis[1].photo+'" width="100%">';
+}
+if(dzOpis[1].status=='0'){
+		dzActDone='<a style="text-align:center;"  class="dzDone" dzid="'+dzOpis[1].id+'">Не выполнено</a>';
+}else{
+	dzActDone='<a style="text-align:center;" dzid="'+dzOpis[1].id+'">Выполнено</a>';
+}
+$('#dzPageDiv').html('<div class="card demo-card-header-pic">\
+  <div class="card-content">\
+    <div class="card-content-inner">\
+      <p>'+dzOpis[1].text+'<br>\
+	  '+dzAct+'\
+</p>\
+	    <div class="card-footer">\
+ '+dzActDone+'\
+  </div>\
+    </div>\
+  </div>\
+</div>'); 
+},
+error: function(XMLHttpRequest, textStatus, errorThrown){
+	myApp.alert("Ошибка");
+}
+});
+};
+
+myApp.onPageInit('dz', function (page) {
+			var dzid = page.query.id;
+getDZUrok(dzid);
+});
+$(document).on("click",".dzDone", function() {
+	    myApp.showIndicator();
+	dzId=$(this).attr('dzid');
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/dzDone.php',data:{dzId:dzId},
+success: function(dzDoneJson){
+	getDZUrok(dzId);
+	   myApp.hideIndicator();
+	   myApp.alert('Вы выполнили задание');
+},
+error: function(XMLHttpRequest, textStatus, errorThrown){		   myApp.hideIndicator();myApp.alert("Ошибка");}
+});
+});
 
 myApp.onPageInit('blogs', function (page) {
       myApp.closePanel();
@@ -165,9 +215,13 @@ function getDZ(){
 	$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/dz.php',data: {groupaUser:groupaUser},dataType : "json",
 success: function(groupaUserSp){
 $.each(groupaUserSp, function(key1, data1) {
-	if(groupaUserSp[key1].video){
-$('#lenta').append('<a class="external" href="'+groupaUserSp[key1].video+'">Видео</a><hr>');
-	}
+if(groupaUserSp[key1].status=='1'){
+	color='#777';
+}else{
+	color='#007aff';
+}
+$('#lenta').append('<a style="color:'+color+';" href="dz.html?id='+groupaUserSp[key1].id+'">Домашнее задание №'+groupaUserSp[key1].id+'</a><hr>');
+
 
 });
 }
@@ -253,6 +307,7 @@ if(data.charAt(0)=='E'){myApp.alert('Неверный пароль');}
 else{
 clientData = JSON.parse(data);
 localStorage.ClientId=clientData[0].id;
+localStorage.secondName=clientData[0].secondName;
 	userUpd();
 	myApp.closeModal();
 myApp.alert(localStorage.secondName+', спасибо за регистрацию!');
@@ -295,4 +350,3 @@ function createContentPage() {
     );
 	return;
 }
-
