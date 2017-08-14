@@ -155,10 +155,11 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 
 $(document).on("click","#shara", function() {
-window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null);
 	imgShara=$(this).attr(img);	
 	nameShara=$(this).attr(name);
 	textShara=$(this).attr(text);
+	alert(imgShara);
+window.plugins.socialsharing.share(null, null, 'http://araik.controlsoft.kz/admin/'+imgShara, null);
 });
 
 
