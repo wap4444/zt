@@ -155,12 +155,10 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 
 $(document).on("click","#shara", function() {
-
+window.plugins.socialsharing.share('Message only');
 	imgShara=$(this).attr(img);	
 	nameShara=$(this).attr(name);
-	textShara=$(this).attr(text);	
-window.plugins.socialsharing.share('Message only');
-
+	textShara=$(this).attr(text);
 });
 
 
