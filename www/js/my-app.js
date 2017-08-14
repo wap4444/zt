@@ -155,6 +155,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 
 $(document).on("click","#shara", function() {
+window.plugins.socialsharing.share('Message only');
 myApp.alert("Шара");
 	nameShara=$(this).attr(name);
 	textShara=$(this).attr(text);	
