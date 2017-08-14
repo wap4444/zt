@@ -156,8 +156,8 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 $(document).on("click","#shara", function() {
 	imgShara=$(this).attr('imgSrc');	
-	nameShara=$(this).attr(name);
-	textShara=$(this).attr(text);
+	nameShara=$(this).attr('name');
+	textShara=$(this).attr('text');
 	alert(imgShara);
 window.plugins.socialsharing.share(null, null, 'http://araik.controlsoft.kz/admin/'+imgShara, null);
 });
