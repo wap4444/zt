@@ -158,7 +158,7 @@ $(document).on("click","#shara", function() {
 	imgShara=$(this).attr('imgSrc');	
 	nameShara=$(this).attr('name');
 	textShara=$(this).attr('text');
-window.plugins.socialsharing.share(nameShara, null, 'http://araik.controlsoft.kz/admin/'+imgShara, null);
+window.plugins.socialsharing.share(null, null, 'http://araik.controlsoft.kz/admin/'+imgShara, null);
 });
 
 
