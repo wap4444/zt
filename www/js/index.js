@@ -55,7 +55,7 @@ rr=2;
         
         window.plugins.OneSignal.getIds(function(ids) {
                     ipush = ids.userId;
-            alert(ipush);
+localStorage.ipush=ipush;
             });
         
 
