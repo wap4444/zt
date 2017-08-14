@@ -264,19 +264,6 @@ getDZ();
 });
 
 };
-
-
-
-$(document).on("click","#cam1", function() {
-navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-destinationType: Camera.DestinationType.DATA_URL });
-
-function onSuccess(imageURI) {}
-
-function onFail(message) {
-    alert('Failed because: ' + message);
-}		
-});
 /////////////////////////////
 /////////////////////////////
 /////////////////////////////
@@ -313,7 +300,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 $(document).on("click","#GoReg1", function() {
 clientPhonePass=$('#clientPhonePass').val();
 
-$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass},
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass,ipush:localStorage.ipush},
 success: function(data){
 if(data.charAt(0)=='E'){myApp.alert('Неверный пароль');}
 else{
