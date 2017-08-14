@@ -45,7 +45,7 @@ $('.newspost').html('<div class="card demo-card-header-pic">\
   <div class="card-content">\
     <div class="card-content-inner">\
       <p>'+blogSp[1].text+'<br>\
-<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'"  img="'+blogSp[1].img+'">Поделиться</a></p>\
+<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'"  imgSrc="'+blogSp[1].img+'">Поделиться</a></p>\
     </div>\
   </div>\
 </div>');
@@ -155,7 +155,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 
 $(document).on("click","#shara", function() {
-	imgShara=$(this).attr(img);	
+	imgShara=$(this).attr('imgSrc');	
 	nameShara=$(this).attr(name);
 	textShara=$(this).attr(text);
 	alert(imgShara);
