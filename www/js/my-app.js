@@ -45,7 +45,7 @@ $('.newspost').html('<div class="card demo-card-header-pic">\
   <div class="card-content">\
     <div class="card-content-inner">\
       <p>'+blogSp[1].text+'<br>\
-<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'"  imgSrc="'+blogSp[1].img+'">Поделиться</a></p>\
+<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'">Расшарить</a></p>\
     </div>\
   </div>\
 </div>');
@@ -155,16 +155,14 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 
 $(document).on("click","#shara", function() {
-	imgShara=$(this).attr('imgSrc');	
-	nameShara=$(this).attr('name');
-	textShara=$(this).attr('text');
-window.plugins.socialsharing.share(null, null, 'http://araik.controlsoft.kz/admin/'+imgShara, null);
+myApp.alert("Шара");
+	nameShara=$(this).attr(name);
+	textShara=$(this).attr(text);	
 });
 
 
 $(document).on("click","#cam", function() {
-	myApp.alert('cam');
-	navigator.camera.getPicture(onSuccess, onFail, { quality: 80,
+navigator.camera.getPicture(onSuccess, onFail, { quality: 80,
 destinationType: Camera.DestinationType.DATA_URL ,
 correctOrientation:true,
 sourceType: Camera.PictureSourceType.CAMERA,
@@ -172,7 +170,6 @@ allowEdit: true,
 encodingType: Camera.EncodingType.JPEG,
 targetWidth:400,
 targetHeight:400 });
-
 
 function onSuccess(imageURI) {
 	$("#cam").attr("src","data:image/jpeg;base64," + imageURI);
@@ -265,6 +262,12 @@ getDZ();
 });
 
 };
+
+
+$$('#bestUser').on('click', function () {
+	myApp.alert('Нет данных. Повторите попытку позже');
+});
+
 /////////////////////////////
 /////////////////////////////
 /////////////////////////////
@@ -273,6 +276,11 @@ getDZ();
 $$('#login').on('click', function () {
 $('#clientPhoneReg').inputmask("79999999999");
 myApp.loginScreen();
+});
+
+$(document).on("click","#regClose", function() {
+	console.log('111');
+	myApp.closeModal();
 });
 
 $(document).on("click","#GoReg", function() {
@@ -286,7 +294,7 @@ if(data.charAt(0)=='E'){myApp.alert('Клиент с таким номером �
 else{
 clientData = JSON.parse(data);
 localStorage.pass=clientData[0].pass;
-myApp.alert(localStorage.pass);
+myApp.alert('Мы отправили Вам СМС сообщение с проверочным кодом');
 $('#passArea').slideDown(500);$('#GoReg').hide();$('#GoReg1').show();
 }
 },
@@ -301,7 +309,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 $(document).on("click","#GoReg1", function() {
 clientPhonePass=$('#clientPhonePass').val();
 
-$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass,ipush:localStorage.ipush},
+$.ajax({type: 'POST',url: 'http://araik.controlsoft.kz/fr7/api/regFinal.php',data: {clientPhoneReg:clientPhoneReg,clientPhonePass:clientPhonePass},
 success: function(data){
 if(data.charAt(0)=='E'){myApp.alert('Неверный пароль');}
 else{
@@ -319,7 +327,6 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 });
 	
 });
-
 //////////////////////////////
 
 // Generate dynamic page
