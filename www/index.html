@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>My App</title>
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
@@ -49,14 +50,16 @@
             <div class="item-title"><a href="blog.html">Блог школы</a></div>
           </div>
         </li>
-        <li class="item-content">
+
+		<li class="item-content">
           <div class="item-inner">
-            <div class="item-title"><a href="about.html">Контакты</a></div>
+            <div class="item-title"><a href="#" id="bestUser">Лучшие ученики</a></div>
           </div>
         </li>
-        <li class="item-content">
+		
+		  <li class="item-content">
           <div class="item-inner">
-            <div class="item-title"><button onclick="window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null)">image only</button></div>
+            <div class="item-title"><a href="about.html">Контакты</a></div>
           </div>
         </li>
       </ul>
@@ -139,7 +142,7 @@
             <div class="item-inner">
               <div class="item-title label">Пароль</div>
               <div class="item-input">
-                <input type="text"  id="clientPhonePass" autocomplete="off" placeholder="Your password"/>
+                <input type="text"  id="clientPhonePass" autocomplete="off" placeholder="Код из СМС"/>
               </div>
             </div>
           </li>
@@ -150,7 +153,7 @@
           <li><a class="item-link list-button" id="GoReg">Продолжить</a><a class="item-link list-button" id="GoReg1" style="display:none;">Продолжить</a></li>
         </ul>
         <div class="list-block-label">
-          <p>Наж</p>
+          <a id="regClose">Закрыть</a>
         </div>
       </div>
     </form>
@@ -163,16 +166,10 @@
 
       </div>
     </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-	
     <!-- Jquery Core Js -->
-    <script src="http://araik.controlsoft.kz/admin/plugins/jquery/jquery.min.js"></script>
+    <script src="../admin/plugins/jquery/jquery.min.js"></script>
 	<!-- Input Mask Plugin Js -->
-    <script src="http://araik.controlsoft.kz/admin/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <script src="../admin/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <!-- Path to your app js-->
