@@ -56,7 +56,7 @@ MaksimMorozov
 </feature>
       
       
-<key>NSAppleMusicUsageDescription</key>
+<key>NSCameraUsageDescription</key>
 <string>Загрузка аватарки для пользователя</string>
 
 
