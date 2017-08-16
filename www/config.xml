@@ -55,6 +55,9 @@ MaksimMorozov
   <param name="wp-package" value="SocialSharing"/>
 </feature>
       
+      
+<key>NSAppleMusicUsageDescription</key>
+<string>Загрузка аватарки для пользователя</string>
 
 
 <!-- Recommend the newest cli but requires cli-5.1.1+ and gradle for Android. -->
