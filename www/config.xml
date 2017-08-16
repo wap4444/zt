@@ -55,9 +55,9 @@ MaksimMorozov
   <param name="wp-package" value="SocialSharing"/>
 </feature>
       
-      
-<key>NSCameraUsageDescription</key>
-<string>Загрузка аватарки для пользователя</string>
+<gap:config-file platform="ios" parent="NSCameraUsageDescription" overwrite="true">
+    <string>Загрузка аватарки для пользовател</string>
+</gap:config-file>
 
 
 <!-- Recommend the newest cli but requires cli-5.1.1+ and gradle for Android. -->
