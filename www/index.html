@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="http://araik.controlsoft.kz/fr7/css/my-app.css">
 	<style>
 	.swiper-slide {
   background: #fff;
@@ -42,30 +42,6 @@
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-	      	  <div class="content-block-title">Linguastan</div>
-    <div class="list-block">
-      <ul style="background:rgba(255, 255, 255, 0);">
-        <li class="item-content">
-          <div class="item-inner">
-            <div class="item-title"><a href="blog.html">Блог школы</a></div>
-          </div>
-        </li>
-
-		<li class="item-content">
-          <div class="item-inner">
-            <div class="item-title"><a href="#" id="bestUser">Лучшие ученики</a></div>
-          </div>
-        </li>
-		
-		  <li class="item-content">
-          <div class="item-inner">
-            <div class="item-title"><a href="about.html">Контакты</a></div>
-          </div>
-        </li>
-      </ul>
-    </div>
-      </div>
     </div>
     <!-- Right panel with cover effect-->
     <div class="panel panel-right panel-cover">
@@ -80,13 +56,16 @@
         <!-- Top Navbar-->
         <div class="navbar">
           <div class="navbar-inner">
+		              <div class="center sliding">Linguastan</div>
 		    <div class="left">
-            <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
             </div>
             <!-- We have home navbar without left link-->
-            <div class="center sliding">Linguastan</div>
+
 		    <div class="right">
             <a id="login">Вход</a>
+            <a id="profile" style="display:none;" href="prof.html"><i class="fa fa-user-circle-o" style="
+    font-size: 30px;
+"></i></a>
             </div>
           </div>
         </div>
@@ -95,7 +74,7 @@
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
-            <div class="page-content">
+            <div class="page-content" style="padding-bottom:0px;">
 			
 			
 			
@@ -105,18 +84,33 @@
     <div class="swiper-wrapper">
     </div>
   </div>
-  
-  
-<div class="content-block" style="margin:0px;">
-      <div class="content-block-inner">
-<div class="row">
-        <div class="col-33" id="clientPhoto"></div>
-        <div class="col-66" id="clientInfoArea"></div>
-</div>
-	  </div>
-<div class="content-block-inner" id="lenta">
-</div>
-</div>
+<div class="mainmenu" style="
+    margin-top: 4px;
+">
+
+  <a href="blog.html"><div class="heading-style" style="background-image: url(img/rasp.jpg)">
+	<h4 class="heading-title">Блог</h4> <div class="overlay"></div>
+	</div></a>
+	
+	  <a id="bestUser"><div class="heading-style" style="background-image: url(img/bestuser.jpg)">
+	<h4 class="heading-title">Лучшие ученики</h4> <div class="overlay"></div>
+	</div></a>
+	
+<a href="about.html"><div class="heading-style" style="background-image: url(img/cont.jpg)">
+	<h4 class="heading-title">Контакты</h4> <div class="overlay"></div>
+	</div></a>
+	
+    </div>
+<!-- <div class="content-block" style="margin:0px;"> -->
+      <!-- <div class="content-block-inner"> -->
+<!-- <div class="row"> -->
+        <!-- <div class="col-33" id="clientPhoto"></div> -->
+        <!-- <div class="col-66" id="clientInfoArea"></div> -->
+<!-- </div> -->
+	  <!-- </div> -->
+<!-- <div class="content-block-inner" id="lenta"> -->
+<!-- </div> -->
+<!-- </div> -->
 
 
 
