@@ -1,0 +1,150 @@
+.heading-style{
+	position:relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    background-size: cover;
+}
+.heading-style .overlay{
+    opacity: 0.35;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+background-color:black;
+}
+.heading-style a{
+	position:relative;
+	z-index:2;
+	color:white;
+	z-index:10;
+}
+.heading-style h4{
+    font-weight: bold;
+	    font-size: 15px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    z-index: 10;
+}
+
+.heading-title1{
+    font-weight: bold;
+    position: absolute!important;
+    z-index: 2;
+    color: white;
+    z-index: 10;
+	bottom:0px;
+}
+
+.heading-title_dol{
+	font-size:12px;
+    position: absolute!important;
+    z-index: 2;
+    color: #ffcc00;
+    z-index: 10;
+	bottom:5px;
+} 
+.heading-style h5{	position:relative;
+		color:white;
+	z-index:10;
+	    margin-top: 5px;
+}
+ .sportpit{
+    padding-bottom: 5px;
+}
+.sportpit .overlay{
+	   opacity: 0.3;
+}
+.postimg{
+	width: 100%;
+	position:relative;
+}
+.postimg img{
+	width: 100%;
+	position:relative;
+}
+.postimg .overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.7) );
+}
+.postimg h5{
+	text-shadow: 0px 1px 0px #000000;
+    font-size: 19px;
+    z-index: 2;
+    position: absolute;
+    color: #FFFFFF;
+    bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+}
+.clientprofile{
+	padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: url(../img/clientfon.jpg);
+    background-size: cover;
+	text-align: center;
+position:relative;
+}
+.clientprofile img {
+    width: 120px;
+    border-radius: 120px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 4;
+border: solid 4px rgba(255,255,255,0.9);}
+.clientprofile h3{
+	color:white;
+}
+.clubnamerasp{
+	color:#c0ff00;
+	background-color:#000;
+	font-size:20px;
+	font-weight:bold;
+	height:auto;
+	padding-top:10px;
+	padding-bottom:10px;
+	text-align:center;
+}
+.ratime{
+	color:#e4ff00;
+	background-color:#484848;
+	font-size:15px;
+	font-weight:bold;
+	height:auto;
+	padding-top:10px;
+	padding-bottom:10px;
+	text-align:center;
+}
+.rarasp{
+	color:#fff;
+	background-color:#aaaaaa;
+	font-size:13px;
+	height:auto;
+	padding:5px;
+	font-weight:bold;
+}
+.smotrdate{
+	color:#e4ff00;
+	background-color:#414141;
+	font-size:13px;
+		font-weight:bold;
+		text-align:center;
+	height:auto;
+	padding:8px;
+}
+.mainmenu div{
+	margin-bottom:4px;
+}
