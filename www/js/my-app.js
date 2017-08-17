@@ -141,7 +141,7 @@ $('#postss').append('\
     </div>\
   </div>\
   <div class="card-footer">\
-    <a href="blogpost.html?id='+blogSp[key1].id+'" class="link">Читать полностью</a>\
+    <a href="blogpost.html?id='+blogSp[key1].id+'" class="link">Читать полностью1</a>\
   </div>\
 </div>');
 });
