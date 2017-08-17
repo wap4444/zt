@@ -24,12 +24,11 @@ var app = {
 document.addEventListener("offline", onOffline, false);
  
 function onOffline() {
-alert('off');
+myApp.alert('Отсутствует подклюение к Интернет!');
 }
 document.addEventListener("online", onOnline, false);
  
 function onOnline() {
-alert('on');
 }
         
         rr=1;
