@@ -45,7 +45,7 @@ $('.newspost').html('<div class="card demo-card-header-pic">\
   <div class="card-content">\
     <div class="card-content-inner">\
       <p>'+blogSp[1].text+'<br>\
-<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'">Расшарить</a></p>\
+<a id="shara" name="'+blogSp[1].name+'" text="'+blogSp[1].name+'" imgSrc="'+blogSp[1].img+'">Поделиться</a></p>\
     </div>\
   </div>\
 </div>');
@@ -155,9 +155,10 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 
 
 $(document).on("click","#shara", function() {
-myApp.alert("Шара");
-	nameShara=$(this).attr(name);
-	textShara=$(this).attr(text);	
+	nameShara=$(this).attr('name');
+	textShara=$(this).attr('text');	
+	imgSrc=$(this).attr('imgSrc');
+	window.plugins.socialsharing.share(null, null, 'http://araik.controlsoft.kz/admin/'+imgSrc, null)"
 });
 
 
