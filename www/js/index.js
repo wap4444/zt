@@ -48,8 +48,7 @@ function onOnline() {
           .iOSSettings(iosSettings)
           .endInit();
         window.plugins.OneSignal.getIds(function(ids) {
-            ipush = ids.userId;    
-            alert(ipush);
+            ipush = ids.userId;
             localStorage.ipush=ipush;
             });
         
