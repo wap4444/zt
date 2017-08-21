@@ -30,11 +30,15 @@ document.addEventListener("online", onOnline, false);
  
 function onOnline() {
 }
+
+        function didReceiveRemoteNotificationCallBack(jsonData) {   
+}
+        function didOpenRemoteNotificationCallBack(jsonData) {
+}
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
         iosSettings["kOSSettingsKeyAutoPrompt"] = true;
         iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
-
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ
            window.plugins.OneSignal
           .startInit("e1beb418-934b-4e48-b6df-4664b8b5a967")
@@ -43,10 +47,10 @@ function onOnline() {
               .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
           .iOSSettings(iosSettings)
           .endInit();
-        
         window.plugins.OneSignal.getIds(function(ids) {
-ipush = ids.userId;
-localStorage.ipush=ipush;
+            ipush = ids.userId;    
+            alert(ipush);
+            localStorage.ipush=ipush;
             });
         
 
