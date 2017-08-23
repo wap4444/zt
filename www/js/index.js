@@ -24,7 +24,7 @@ var app = {
 document.addEventListener("offline", onOffline, false);
  
 function onOffline() {
-myApp.alert('Отсутствует подклюение к Интернет!');
+myApp.alert('Отсутствует подключение к Интернет!');
 }
 document.addEventListener("online", onOnline, false);
  
@@ -41,7 +41,7 @@ function onOnline() {
         iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ
            window.plugins.OneSignal
-          .startInit("e1beb418-934b-4e48-b6df-4664b8b5a967")
+          .startInit("786a967b-3cd7-4616-b83d-5ea22c235ae4")
           .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
           .handleNotificationOpened(didOpenRemoteNotificationCallBack)
               .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
