@@ -55,8 +55,7 @@ targetWidth:400,
 targetHeight:400 });
 
 function onSuccess(imageURI) {
-alert(imageURI);
-$("#photoArea").html('<img src="data:image/jpeg;base64,"'+ imageURI+'" width="100%"><hr>');
+$("#cam").attr("src","data:image/jpeg;base64," + imageURI);
 // fotoUpload(imageURI);
 }
 
